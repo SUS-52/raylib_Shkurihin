@@ -1,0 +1,79 @@
+#include<stdlib.h>
+#include<time.h>
+
+#include"raylib.h"
+#include"raymath.h"
+
+#define COLS 10
+#define ROWS 10
+
+const int screenWight = 400;
+const int screenHeight = 400;
+
+const int cellWight = screenWight / COLS;
+const int cellHeight = screenHeight / ROWS;
+
+typedef struct Cell
+{
+	int i;
+	int j;
+}Cell;
+
+Cell grid[ROWS][COLS];
+
+void CellDraw(void);
+
+int main()
+{
+	srand(time(0));
+
+	InitWindow(screenWight, screenHeight, "Raylib Template");
+	
+	for (int i = 0; i < COLS; i++)
+	{
+		for (int j = 0; j < ROWS; j++)
+		{
+			grid[i][j] = (Cell) 
+			{
+				.i=i,
+				.j=j
+			};
+		}
+	while (!WindowShouldClose())
+	{
+		BeginDrawing();
+		 
+			ClearBackground(RAYWHITE);
+			for (int i = 0; i < COLS; i++)
+			{
+				for (int j = 0; j < ROWS; j++)
+				{
+				}
+
+			}
+
+		EndDrawing();
+
+
+	}
+	CloseWindow();
+
+
+
+	return 0;
+
+}
+
+	void CellDraw(Cell cell);
+	{
+	
+		DrawRectangleLines(cell.i * cellWight, cell.j * cellHeight, cellWight, cellHeight, BLACK);
+
+	
+	
+	
+	}
+
+
+
+
